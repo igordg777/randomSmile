@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <hr>
+  <p align="center">Привет, это мой первый сайт!!!</p>
+  <hr>
+  <div class="container">
+    <div style="background-color: aqua;">
+      <script type="text/javascript" language="javascript" src="http://www.rzhunemogu.ru/widzh/RNMjsonp.js"></script>
+      <script
+        type="text/javascript">  function onSuccess(response) { console.log('response'); document.getElementById("result_1").innerHTML = response.result; }</script>
+      <div id="result_1">
+      </div> <button class="btn btn-primary"
+        onclick=" getJSONP('http://www.RzhuNeMogu.ru/Widzh/WidzhRNM.aspx?type=1',onSuccess)">Новый
+        анекдот</button>
+    </div>
+
+    <hr>
+    <div style="background: linear-gradient(to bottom, rgb(198, 252, 198), rgb(28, 248, 28))">
+      <script type="text/javascript" language="javascript" src="http://www.rzhunemogu.ru/widzh/RNMjsonp.js"></script>
+      <script type="text/javascript">
+
+        window.onload = (function one() { getJSONP('http://www.RzhuNeMogu.ru/Widzh/WidzhRNM.aspx?type=1', onSuccess); sayHi() })
+        function sayHi() {
+          getJSONP('http://www.RzhuNeMogu.ru/Widzh/WidzhRNM.aspx?type=2', onSuccess1)
+        }
+
+
+        function onSuccess1(response) { console.log(response); document.getElementById("result_2").innerHTML = response.result; }</script>
+      <div id="result_2">
+
+      </div> <button class="btn btn-success"
+        onclick="getJSONP('http://www.RzhuNeMogu.ru/Widzh/WidzhRNM.aspx?type=2',onSuccess1)">Новый рассказ
+      </button>
+    </div>
+  </div>
+  <input type="button" class="btn btn-info" value=" Обновить все" onClick="window.location.reload()">
+
+</body>
+
+</html>
